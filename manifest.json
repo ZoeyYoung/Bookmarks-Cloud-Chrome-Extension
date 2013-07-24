@@ -1,18 +1,27 @@
 {
   "manifest_version": 2,
-
-  "name": "LinksBox",
-  "description": "我的书签管理应用Chrome浏览器插件.",
+  "name": "Bookmarks_Cloud",
+  "description": "Adds the current page to my Bookmarks_Cloud system.",
+  "version": "1.0",
+  "background": {
+      "scripts": [
+            "background.js"
+      ],
+      "persistent": true
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
   "version": "1.0",
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
     "128": "icon.png" },
   "browser_action": {
+    "default_title": "Bookmark This Page",
     "default_icon": "icon.png",
     "default_popup": "popup.html"
-  },
-  "permissions": [
-    "tabs", "http://localhost:8888/"
-  ]
+  }
 }
