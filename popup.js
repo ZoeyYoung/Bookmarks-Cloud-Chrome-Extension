@@ -7,7 +7,8 @@
   var initAddLinkForm = function(response) {
     $('#description').val(response.description);
     $('#tags').val(response.tags);
-    note = $('#note').val() + response.note;
+    note = $('#note').val();
+    note += (note !== '') ? '\n' + response.note : response.note;
     $('#note').val(note);
     $('#linkForm').show();
     $('#linkInfoInputs').show();
@@ -15,9 +16,7 @@
 
   window.onload = function() {
     var bg = chrome.extension.getBackgroundPage();
-    console.log(bg);
     bg.getPageInfo(function(o) {
-      console.log(o.note);
       $("#note").val(o.note);
       html = o.html;
     });
