@@ -1,14 +1,14 @@
 (function($) {
   var host = 'http://localhost:8888';
   var url='', title='', favicon='', html='';
-  window.onload = function() {
-  };
   // 初始化表单
   var initAddLinkForm = function(response) {
     $('#description').val(response.description);
-    $('#tags').val(response.tags);
-    note = $('#note').val();
-    note += (note !== '') ? '\n' + response.note : response.note;
+    tags_t = $('#tags').val();
+    tags = (tags_t === '') ? response.tags : response.tags + ','+ tags_t;
+    $('#tags').val(tags);
+    note_t = $('#note').val();
+    note = (note_t === '') ? response.note : response.note + '\n' + note_t;
     $('#note').val(note);
     $('#linkForm').show();
     $('#linkInfoInputs').show();
