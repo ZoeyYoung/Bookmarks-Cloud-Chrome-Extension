@@ -10,8 +10,7 @@
     note_t = $('#note').val();
     note = (note_t === '') ? response.note : response.note + '\n' + note_t;
     $('#note').val(note);
-    $('#linkForm').show();
-    $('#linkInfoInputs').show();
+    $('#bookmarkForm').show();
   };
 
   window.onload = function() {
@@ -29,7 +28,7 @@
       favicon = tab.favIconUrl;
     }
     $("#title").val(title);
-    jQuery.getJSON(host + '/link/get_info', {url: url}, function(response) {
+    jQuery.getJSON(host + '/bookmark/get_info', {url: url}, function(response) {
         if (response.success === 'true') {
           initAddLinkForm(response);
         } else {
@@ -40,7 +39,7 @@
 
   $(document).on('click', '#addLinkBtn', function() {
     jQuery.ajax({
-      url: host + '/link/add',
+      url: host + '/bookmark/add',
       data: {url: url, title: $('#title').val(), favicon: favicon, description: $('#description').val(), tags: $('#tags').val(), note: $('#note').val(), html: html},
       dataType: "json",
       type: "POST",
