@@ -4,22 +4,13 @@
     <title>LinksBox</title>
     <style>
         body {
-            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-family: 'Alegreya SC', 'Garamond', 'Georgia', '\5fae\8f6f\96c5\9ed1', tahoma, arial, '\5b8b\4f53';
             font-size: 14px;
             line-height: 20px;
             color: #555;
             width: 550px;
         }
-        .form-horizontal .control-group {
-            margin-bottom: 20px;
-        }
-        .form-horizontal .control-label {
-            float: left;
-            width: 40px;
-            padding-top: 5px;
-            text-align: right;
-        }
-        .input-xxlarge {
+        input, textarea {
             width: 450px;
         }
         form {
@@ -28,31 +19,22 @@
         label {
             vertical-align: top;
         }
-        .form-horizontal .controls {
-            margin-left: 50px;
-        }
     </style>
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
-     -->
     <script src="jquery-latest.js"></script>
     <script src="popup.js"></script>
   </head>
   <body>
-        <form id="bookmarkForm" class="form-horizontal" action="#">
+        <form id="bookmarkForm" action="#">
             <label for="title">标题</label>
-            <input type="text" name="title" id="title" placeholder="the title of the web" class="input-xxlarge" required disabled><br/>
+            <input type="text" name="title" id="title" placeholder="the title of the web" required disabled><br/>
             <label for="description">摘要</label>
-            <textarea name="description" id="description" rows="3" placeholder="the description of the web" class="input-xxlarge" disabled></textarea><br/>
+            <textarea name="description" id="description" rows="3" placeholder="the description of the web" disabled></textarea><br/>
             <label for="tags">标签</label>
-            <input type="text" name="tags" id="tags" placeholder="tags,seprate,with,','" class="input-xxlarge" required><br/>
+            <input type="text" name="tags" id="tags" placeholder="tags,seprate,with,','" required><br/>
             <label for="note">笔记</label>
-            <textarea class="input-xxlarge" id="note" rows="5" placeholder="使用Markdown语法"></textarea><br/>
-            <button type="button" id="addLinkBtn" class="btn btn-primary">提交</button>
-            <button type="button" id="cancelAddLinkBtn" class="btn">取消</button>
+            <textarea id="note" rows="5" placeholder="使用Markdown语法"></textarea><br/>
+            <button type="button" id="addLinkBtn">提交</button>
+            <button type="button" id="cancelAddLinkBtn">取消</button>
         </form>
   </body>
 </html>
