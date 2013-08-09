@@ -1,4 +1,4 @@
-www-Links-Chrome-Extension
+Bookmarks-Cloud-Chrome-Extension
 ==========================
 
-我的LinksBox项目的Chrome浏览器插件
+我的书签云项目的Chrome浏览器插件
